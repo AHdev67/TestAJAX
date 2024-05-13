@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Test</title>
+</head>
+<body>
+
+    <main>
+        <fieldset>
+            <legend id="legDemo">Bing ?</legend>
+
+            <h2>
+                <span id="demo">Bong</span>
+            </h2>
+            <button type="button" onclick="loadDoc1()">Change content</button>
+        </fieldset>
+
+        <br>
+        
+        <fieldset>
+            <legend>Qui tombe à l'eau ?:</legend>
+
+            <div>
+                <h2>
+                    <span id="demo2">?</span>
+                </h2>
+            </div>
+
+            <div>
+                <input type="radio" id="choice1" name="choice" value="pincemi" onclick="loadDoc2()"/>
+                <label for="choice1">1</label>
+            </div>
+
+            <div>
+                <input type="radio" id="choice2" name="choice" value="pincemoi" onclick="loadDoc2()"/>
+                <label for="choice2">2</label>
+            </div>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Multiplicateur des ténèbres</legend>
+           
+            <input type="number" name="userInp" id="inp1" value="0" onfocus="handleFocus(this)" onblur="handleBlur(this)" onchange="multiply()"> x 
+            <input type="number" name="userInp" id="inp2" value="0" onfocus="handleFocus(this)" onblur="handleBlur(this)" onchange="multiply()"> = 
+            <span id="result">0</span>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Searchbar of doom</legend>
+
+            <input class="searchbar" type="text" name="mySearchBar" id="search" oninput="loadSuggest()" placeholder="search ...">
+            
+            <ul id="suggestions">
+
+            </ul>
+        </fieldset>
+
+    </main>
+    
+    <script src="main.js"></script>
+</body>
+</html>
