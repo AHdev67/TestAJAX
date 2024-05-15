@@ -134,3 +134,33 @@ function clearResults() {
     const resultList = document.getElementById("suggestions");
     resultList.innerHTML = ""; // Clear all results
 }
+
+// ---------- DATA LOADER FOR SELECT FIELD ----------
+
+// const xhttp = new XMLHttpRequest();
+// xhttp.onload = function() {
+//     createCpuOption(this.responseText);
+// }
+// xhttp.open("GET", "searchData/cpu.json", true);
+// xhttp.send();
+
+fetch('searchData/cpu.json')
+    .then(response => response.json())
+    .then(data => {
+        createCpuOption(data);
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error fetching JSON:', error);
+    });
+
+function createCpuOption(jsonData) {
+    const selectList = document.getElementById("cpuList");
+
+    for(let i = 0; i < jsonData.length; i++) {
+        const option = document.createElement('option');
+        option.text = jsonData[i].name;
+        option.value = String(i);
+        selectList.appendChild(option);
+    }
+}
